@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Jump Field</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="src/main.css">
+  <script src="src/jump-field.js"></script>
+</head>
+<body>
+  <h1>Jump field</h1>
+  <div class="container">     
+    <p class="description-title">Function in JavaScript to jump from one field to other after the max size of digits has been reached.</p>
+    <div class="container__fields">
+      <label for="">
+        <p>First field (max size of five characters): </p>
+        <input id="first-field" type="text" onkeyup="jumpField(document.getElementById('second-field'), 5, this)">
+      </label>
+    </div>
+    <div class="container__fields">
+      <label for="">
+        <p>Second field (max size of five characters): </p>
+        <input id="second-field" type="text" onkeyup="jumpField(document.getElementById('first-field'), 5, this)">
+      </label>
+    </div>
+    <div class="">
+      <h2>HTML code</h2>
+      <p>First Field:</p>
+      <div class="code">
+        <code>
+          &lt;input id="first-field" type="text" onkeyup="jumpField(document.getElementById('second-field'), 5, this)"&gt;
+        </code>
+      </div>
+      <p>Second field</p>
+      <div class="code">
+        <code>
+          &lt;input id="second-field" type="text" onkeyup="jumpField(document.getElementById('first-field'), 5, this)"&gt;
+        </code>
+      </div>
+    </div>
+    <div>
+      <h2>JavaScript code</h2>
+      <ul>
+        <li>The first parameter in the function is the next element that you want to be focused.</li>
+        <li>The second parameter is the max size of characters that you want to write until the function move to the next field.</li>
+        <li>And the third parameter is the element itself that where you are writing.</li>
+      </ul>
+      <div class="code">
+        <code>
+          jumpField(next, maxSize, event);
+        </code>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
